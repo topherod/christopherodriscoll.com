@@ -1,0 +1,310 @@
+@import "compass/reset";
+@import "compass/css3/transition";
+@import "compass/css3/box-sizing";
+@import "compass/utilities/general/clearfix";
+@import "sass-burger";
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
+
+$font-stack: 'Lato', helvetica, arial, sans-serif;
+$headline-stack: 'Permanent Marker', sans-serif;
+
+$off-white: #fafafa;
+$text-color: $off-white;
+$transparent: rgba( 255, 255, 255, .5);
+$trans-black: rgba( 0, 0, 0, .5);
+
+$moderate-blue: #6699cc;
+$moderate-orange: #d87c3f;
+
+
+@mixin animated-gradient-background() {
+  background: linear-gradient(to right, rgba($moderate-blue, .9), rgba($moderate-orange, .9), rgba($moderate-blue, .9)) center;
+  background-size: 3000px 3000px;
+  -webkit-animation: animatedBackground 60s infinite;
+  animation: animatedBackground 60s infinite;
+}
+html, body {
+  height: 100%;
+}
+body {
+  @include animated-gradient-background();
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: $font-stack;
+  * {
+    box-sizing: border-box;
+  }
+}
+nav {
+  display: block;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  max-height: 0;
+  text-align: center;
+  overflow: hidden;
+  @include single-transition( all, .3s, ease );
+  a {
+    display: block;
+    line-height: 40px;
+    vertical-align: middle;
+    color: $text-color;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 30px;
+    margin: 10px 40px;
+  }
+  &.is-active {
+    max-height: 500px;
+    padding: 20px;
+  }
+}
+h1, nav a {
+  font-family: $headline-stack;
+  transform: rotate(-4deg);
+  display: inline-block;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+.menu-btn {
+  padding: 20px;
+  display: inline-block;
+  text-align: center;
+  margin: 20px auto 100px;
+  cursor: pointer;
+  .burger-icon {
+    @include burger(50px, 6px, 10px, $off-white);
+  }
+  &.is-active .burger-icon {
+    @include burger-to-cross;
+  }
+}
+
+.container {
+  min-height: 100%;
+  margin-bottom: -30px;
+
+  &:after {
+    content: "";
+    display: block;
+  }
+}
+.footer, .container:after {
+  height: 30px;
+}
+.background {
+  background: $off-white;
+  opacity: 1;
+  margin: 0;
+  display: block;
+  position: relative;
+
+  .content {
+    display: block;
+    @include box-sizing(border-box);
+    width: 100%;
+    padding: 30px;
+    position: relative;
+  }
+  &.about {
+    background: $transparent;
+    padding: 50px 20px;
+    .content {
+      @include clearfix;
+      margin: auto;
+      text-align: center;
+      @media (min-width: 1024px) {
+        width: 50%;
+        p:first-of-type {
+          text-align: left;
+        }
+      }
+    }
+    .profile-picture {
+      width: 100%;
+      img {
+        max-width: 150px;
+        height: auto;
+        margin-bottom: 20px;
+        border-radius: 50%;
+      }
+      @media (min-width: 1024px) {
+        width: 30%;
+        float: right;
+        margin: 0 0 20px 20px;
+      }
+    }
+    p {
+      color: $trans-black;
+      font-size: 18px;
+      line-height: 1.5em;
+      margin-bottom: 1.5em;
+      a {
+        font-family: $headline-stack;
+        font-weight: 100;
+        color: $trans-black;
+        border-bottom: dotted 1px $moderate-blue;
+        text-decoration: none;
+        font-size: 1.3em;
+        margin: 0 .1em;
+      }
+    }
+  }
+  &.skills {
+    background: $trans-black;
+    padding: 20px;
+    @include clearfix;
+    .skill {
+      display: block;
+      float: left;
+      width: 100%;
+      margin: 0;
+      padding: 20px 30px;
+      text-align: center;
+      @media (min-width: 1024px) {
+        width: 33.33%;
+      }
+      img {
+        width: auto;
+        height: auto;
+        max-height: 200px;
+        max-width: 100%;
+        margin: 20px 0;
+      }
+      .wp-logo {
+        max-height: 160px;
+        margin: 40px 0;
+      }
+      h4 {
+        color: $off-white;
+        font-weight: 300;
+        font-size: 30px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 4px solid $off-white;
+      }
+      p {
+        color: $off-white;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 1.5em;
+      }
+    }
+  }
+  &.splash {
+    background: #fff url('../img/brooklyn-bridge.jpg') no-repeat fixed center;
+    background-size: cover;
+    margin-bottom: 0;
+  }
+
+  &.splash .content {
+    @include animated-gradient-background();
+    width: 100%;
+    color: #fafafa;
+    text-align: center;
+    padding-bottom: 300px;
+    min-height: 100vh;
+    h1 {
+      position: relative;
+      width: 100%;
+      display: block;
+      font-weight: 100;
+      margin-bottom: 50px;
+    }
+    h2 {
+      font-size: 24px;
+      line-height: 1.1em;
+      font-weight: 300;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.5em;
+      font-weight: 300;
+      width: 90%;
+      margin: 0 5%;
+      margin-top: 40px;
+    }
+    a {
+      border-bottom: dotted 1px $moderate-blue;
+      text-decoration: none;
+      color: $text-color;
+      font-weight: bold;
+    }
+  }
+  &.portfolio {
+    background: $transparent;
+    .content {
+      padding: 0;
+    }
+    .site-examples {
+      @include clearfix;
+      display: inline-block;
+      margin: 0 auto;
+    }
+    a.site-example {
+      display: table;
+      text-align: center;
+      width: 100%;
+      @media (min-width: 1024px) {
+        width: 33%;
+      }
+      height: 200px;
+      float: left;
+      background: rgba($moderate-blue, .5);
+      &:nth-child(2n) {
+        background: rgba($moderate-orange, .5);
+      }
+      &:nth-child(3n - 1) {
+        @media (min-width: 1024px) {
+          width: 34%;
+        }
+      }
+      .site-ex-img {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+      }
+      img {
+        height: auto;
+        width: auto;
+        max-width: 100%;
+        max-height: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  background: $trans-black;
+  font-size: 14px;
+  color: $off-white;
+  text-align: center;
+  line-height: 30px;
+}
+
+@keyframes animatedBackground {
+  0% {
+    background-position: -6000px 0;
+  }
+  100% {
+    background-position: 6000px 0;
+  }
+}
+@-webkit-keyframes animatedBackground {
+  0% {
+    background-position: -6000px 0;
+  }
+  100% {
+    background-position: 6000px 0;
+  }
+}

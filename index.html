@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Christopher O'Driscoll is a Front-End Developer, Web Designer and WordPress Expert based in New York City.">
+<meta name="author" content="Christopher O'Driscoll">
+
+<title>Christopher O'Driscoll | Front-End Developer</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<script src="js/modernizr.custom.js"></script>
+</head>
+<body>
+
+<nav id="navMenu">
+  <a href="#about">About Me</a>
+  <a href="#portfolio">My Work</a>
+  <!-- <a href="#blog">My Blog</a> -->
+</nav>
+
+<div class="container">
+  <div class="splash background">
+    <div class="content">
+      <div class="menu-btn" id="menuButton">
+        <div class="burger-icon"></div>
+      </div>
+      <h1 id="fitHead">Christopher O'Driscoll</h1>
+      <h2 id="fitSubHead">Front-End Web Developer, Designer and WordPress Expert</h2>
+    </div>
+  </div>
+
+  <div class="skills background" id="skills">
+    <div class="skill front-end">
+      <img src="img/logos.png" alt="HTML5, CSS3, jQuery, JavaScript, Sass, Gulp">
+      <h4>Front End</h4>
+      <p>I write semantic code that plays well with others. I use technologies like HTML5, CSS3 (Sass) and jQuery to transform ideas into pixel-perfect Web products.</p>
+    </div>
+    <div class="skill design">
+      <img src="img/designer.png">
+      <h4>Web Design</h4>
+      <p>Handling design and development together ensures that I'll never design something that can't be coded. Taking a mobile-first approach, I design interfaces that look great on every screen or device.</p>
+    </div>
+    <div class="skill wordpress">
+      <img src="img/wp-logo.png" alt="WordPress" class="wp-logo">
+      <h4>WordPress</h4>
+      <p>WordPress is a powerful tool for any designer or developer. Want to start a blog or launch an ecommerce site? A social network? WordPress makes it happen.</p>
+    </div>
+  </div>
+  <div class="portfolio background" id="portfolio">
+    <div class="content">
+      <div class="site-examples">
+        <a href="http://www.pressroomvip.com" target="_blank" class="site-example">
+          <div class="site-ex-img">
+            <img src="img/pressroom.png" alt"PressRoomVIP">
+          </div>
+        </a>
+        <a href="http://www.hiphopmyway.com" target="_blank" class="site-example">
+          <div class="site-ex-img">
+            <img src="img/hhmw.png" alt"Hip Hop My Way">
+          </div>
+        </a>
+        <a href="http://www.cxpi.com" target="_blank" class="site-example">
+          <div class="site-ex-img">
+            <img src="img/cpxi.png" alt"CPXi">
+          </div>
+        </a>
+        <a href="http://www.brealtime.com" target="_blank" class="site-example">
+          <div class="site-ex-img">
+            <img src="img/brealtime.png" alt"bRealTime">
+          </div>
+        </a>
+        <a href="http://site.adready.com" target="_blank" class="site-example">
+          <div class="site-ex-img">
+            <img src="img/adready.png" alt"AdReady">
+          </div>
+        </a>
+        <a href="http://www.thefarcereport.com" target="_blank" class="site-example">
+          <div class="site-ex-img">
+            <img src="img/farce.png" alt"The Farce Report">
+          </div>
+        </a>
+        <a href="http://www.consumedmedia.com" target="_blank" class="site-example">
+          <div class="site-ex-img">
+            <img src="img/consumed.png" alt"Consumed Media">
+          </div>
+        </a>
+        <a href="http://www.nativeaddiction.com" target="_blank" class="site-example">
+          <div class="site-ex-img">
+            <img src="img/native-addiction.png" alt"Native ADdiction">
+          </div>
+        </a>
+        <a href="http://www.talkingpointsmemo.com" target="_blank" class="site-example">
+          <div class="site-ex-img">
+            <img src="img/tpm.png" alt"Talking Points Memo">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="blog background" id="blog">
+    <div class="content">
+      <h3>My Blog</h3>
+    </div>
+  </div> -->
+
+  <div class="about background" id="about">
+    <div class="content">
+      <div class="profile-picture">
+        <img src="img/portfolio-picture.jpg" alt="Christopher O'Driscoll">
+      </div>
+      <p>I'm a creative professional based in <span>New York City</span>. I've developed sites with over <span>26 million</span> monthly visitors and designed for brands such as <span>HBO</span>, <span>MSNBC</span>, <span>BP</span>, <span>PhRMA</span> and <span>Columbia Journalism School</span>. If you are an online publisher, I want to work with you.</p>
+      <p>Reach me by <a href="mailto:cmodriscoll@gmail.com" target="_blank">email</a> or follow me on <a href="https://twitter.com/topherod" target="_blank">Twitter</a>. </p>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">&copy; 2015 Christopher O'Driscoll</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<script type="text/javascript">
+$("#fitHead").fitText(1.5, {minFontSize: '40px', maxFontSize: '80px'});
+
+var menuButton = document.getElementById('menuButton');
+var navMenu = document.getElementById('navMenu');
+menuButton.addEventListener('click', function (e) {
+    menuButton.classList.toggle('is-active');
+    navMenu.classList.toggle('is-active');
+    e.preventDefault();
+});
+</script>
+</body>
+</html>
