@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Christopher O'Driscoll is a Front-End Developer, Web Designer and WordPress Expert based in New York City.">
+<meta name="description" content="Christopher O'Driscoll is a Front-End Developer, Web Designer and WordPress Developer based in New York City.">
 <meta name="author" content="Christopher O'Driscoll">
 
 <title>Christopher O'Driscoll | Front End Developer</title>
@@ -14,47 +14,44 @@
 </head>
 <body>
 
-<nav id="navMenu">
-  <a href="#about">Who I Am</a>
-  <a href="#portfolio">Brands I've Worked With</a>
-</nav>
+
 
 <div class="container">
   <div class="splash background">
     <div class="content">
-      <div class="menu-btn" id="menuButton">
-        <div class="burger-icon"></div>
-      </div>
+
       <h1 id="fitHead">Christopher O'Driscoll</h1>
       <h2 id="fitSubHead">Web Developer</h2>
+
+      <nav class="menu">
+        <a class="menu-item btn" id="scrollToAbout">Who I Am</a> <a class="menu-item btn" id="scrollToPortfolio">Brands I've Worked With</a>
+      </nav>
     </div>
   </div>
 
   <div class="about background" id="about">
     <div class="content">
       <div class="profile-picture">
-        <img src="img/portfolio-picture.jpg" alt="Christopher O'Driscoll">
+        <img src="img/portfolio-picture-bw.png" alt="Christopher O'Driscoll">
       </div>
 
 
-      <p>I'm a self-taught Web Developer and Illinois transplant living in New York. I've worked in small and large teams and I've built and contributed to sites that have scaled to over 26 million monthly page views.</p>
+      <p><b>Christopher O'Driscoll</b> is a Web Developer living in New York. He's worked in small and large teams and he has built and contributed to sites that have scaled to over 26 million monthly page views.</p>
 
-      <p>I work in agile teams, and place an emphasis on transparency and setting realistic goals and sprints. I'm open to new challenges and problems to solve.</p>
+      <p>Christopher works in agile teams, and places an emphasis on transparency and setting realistic goals and sprints. He's open to new challenges and problems to solve.</p>
       
-      <p>Actively working in/learning:<br>
-      React.js • JSX • ES6 • Babel • Node.js<br>
-      WordPress REST API</p>
       
-      <p>5 + years of experience with:<br>
+      <p>10 + years of experience with:<br>
       HTML • CSS • Sass • JavaScript<br>
       WordPress • PHP • MySQL<br>
       jQuery • AJAX<br>
       Gulp • Grunt • Webpack<br>
       Browsersync • ESLint<br>
       Bootstrap • Foundation<br>
-      Capistrano • Jenkins<br>
       Git • GitHub • Bitbucket<br>
-      Photoshop • Illustrator</p>
+      Photoshop • Illustrator<br>
+      React.js • JSX • Node.js<br>
+      WordPress REST API</p>
       <p>Reach me by <a href="mailto:cmodriscoll@gmail.com" target="_blank">email</a> or follow me on <a href="https://github.com/topherod" target="_blank">GitHub</a>. </p>
     </div>
   </div>
@@ -62,6 +59,27 @@
   <div class="portfolio background" id="portfolio">
     <div class="content">
       <div class="site-examples">
+
+        <div class="site-example">
+          <div class="site-ex-img">
+            <img src="img/shel-silverstein.png" alt="Shel Silverstein">
+          </div>
+        </div>
+        <div class="site-example">
+          <div class="site-ex-img">
+            <img src="img/curious-george.png" alt="Curious George">
+          </div>
+        </div>
+        <div class="site-example">
+          <div class="site-ex-img">
+            <img src="img/carmen-sandiego-logo.png" alt="Carmen Sandiego">
+          </div>
+        </div>
+        <div class="site-example">
+          <div class="site-ex-img">
+            <img src="img/harpercollins-logo.svg" alt="HarperCollins Publishers">
+          </div>
+        </div>
         <div class="site-example">
           <div class="site-ex-img">
             <img src="img/ibm-2.png" alt="IBM">
@@ -72,11 +90,11 @@
             <img src="img/mondolabs-2.png" alt="MondoLabs">
           </div>
         </div>
-        <div class="site-example">
+        <!-- <div class="site-example">
           <div class="site-ex-img">
             <img src="img/glo-good-2.png" alt="GLO Good">
           </div>
-        </div>
+        </div> -->
         <div class="site-example">
           <div class="site-ex-img">
             <img src="img/notredame-2.png" alt="Notre Dame School">
@@ -128,20 +146,22 @@
 
 </div>
 
-<div class="footer">&copy; 2019 Christopher O'Driscoll</div>
+<div class="footer">&copy; <span id="current-year"></span> Christopher O'Driscoll</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="js/jquery.fittext.js"></script>
 <script type="text/javascript">
-$("#fitHead").fitText(1.5, {minFontSize: '40px', maxFontSize: '80px'});
+  $("#fitHead").fitText(1.5, {minFontSize: '40px', maxFontSize: '80px'});
+  $("#fitSubHead").fitText(1.5, {minFontSize: '30px', maxFontSize: '60px'});
 
-var menuButton = document.getElementById('menuButton');
-var navMenu = document.getElementById('navMenu');
-menuButton.addEventListener('click', function (e) {
-    menuButton.classList.toggle('is-active');
-    navMenu.classList.toggle('is-active');
-    e.preventDefault();
-});
+  document.getElementById('scrollToAbout').addEventListener('click', function() {
+      document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+  });
+  document.getElementById('scrollToPortfolio').addEventListener('click', function() {
+      document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  document.getElementById("current-year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
