@@ -200,7 +200,10 @@ h3 {
     }
   }
   &.splash {
-    background: #fff url('../img/brooklyn-bridge.jpg') no-repeat fixed center;
+    background-color: #fff;
+    background-image: url('../img/brooklyn-bridge.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     margin-bottom: 0;
   }
