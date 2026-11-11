@@ -1,5 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
-@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Permanent+Marker&display=swap");
 html, body {
   height: 100%;
 }
@@ -63,6 +62,9 @@ h1 {
   }
 }
 
+#fitSubHead {
+  font-weight: bold;
+}
 @media (min-width: 1024px) {
   #fitSubHead {
     font-size: 3em;
