@@ -74,6 +74,15 @@ h1 {
   font-family: $headline-stack;
   transform: rotate(-4deg);
   display: inline-block;
+  @media (min-width: 1024px) {
+    font-size: 5em;
+  }
+}
+#fitSubHead {
+  font-weight: bold;
+  @media (min-width: 1024px) {
+    font-size: 3em;
+  }
 }
 
 h3 {
